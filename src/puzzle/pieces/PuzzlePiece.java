@@ -1,4 +1,4 @@
-package puzzle;
+package puzzle.pieces;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -28,6 +28,8 @@ public class PuzzlePiece {
 	
 	Image texture;
 	
+	PieceOverlayInfo overlayInfo;
+	
 	Rectangle rect;
 	
 	public boolean locked = false;
@@ -55,6 +57,25 @@ public class PuzzlePiece {
 		this.subimage = subimage;
 		this.rect = rect;
 	}
+	
+	/*
+	public void applyOverlay() {
+		BufferedImage img = new BufferedImage(texture.getWidth(null), texture.getHeight(null), BufferedImage.TYPE_INT_ARGB);
+		Graphics2D g2D = img.createGraphics();
+		
+		BufferedImage overlay = (BufferedImage) overlayTexture;
+		
+		// draw piece
+		g2D.drawImage(texture, 0, 0, null);
+		
+		for(int y = 0; y < overlayTexture.getHeight(null); y++) {
+			for(int x = 0; x < overlayTexture.getWidth(null); x++) {
+				if(new Color(overlay.getRGB(x, y)).getRed() == 255) {
+					System.out.println("Found red at " + x + "," + y);
+				}
+			}
+		}
+	}*/
 	
 	/**
 	 * Returns if the piece is a parent

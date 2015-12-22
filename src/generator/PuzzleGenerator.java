@@ -9,7 +9,7 @@ import java.util.Random;
 
 import main.Main;
 import main.MathFunctions;
-import puzzle.PuzzlePiece;
+import puzzle.pieces.PuzzlePiece;
 
 /**
  * Generates Puzzle
@@ -46,10 +46,12 @@ public class PuzzleGenerator {
 	 * @param img
 	 */
 	public void setImage(Image img) {
-		this.img = new BufferedImage(img.getWidth(null), img.getHeight(null), BufferedImage.TYPE_INT_RGB);
-		Graphics2D g = this.img.createGraphics();
-		g.drawImage(img, 0, 0, null);
-		g.dispose();
+		//this.img = new BufferedImage(img.getWidth(null), img.getHeight(null), BufferedImage.TYPE_INT_RGB);
+		//Graphics2D g = this.img.createGraphics();
+		//g.drawImage(img, 0, 0, null);
+		//g.dispose();
+		
+		this.img = (BufferedImage) img;
 	}
 	
 	/**
@@ -116,8 +118,8 @@ public class PuzzleGenerator {
 		if(MathFunctions.isPrime(numberOfPieces)) numberOfPieces--;
 		if(numberOfPieces == 0) return false;
 		
-		// Find rounded number closest to square root and set the number of pieces on y to that
-		int nopY = (int) (Math.sqrt(numberOfPieces) + 0.5f);
+	//	// Find rounded number closest to square root and set the number of pieces on y to that
+		int nopY = (int) (Math.sqrt(numberOfPieces) + 0.5);
 		int nopX = numberOfPieces / nopY; // Determine number of pieces on x
 		
 		// Determine piece size by dividing the image size by the number of pieces

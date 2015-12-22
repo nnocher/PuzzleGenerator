@@ -61,6 +61,16 @@ public class Animation implements Runnable {
 		loadImage(url);
 	}
 	
+	public Animation(String path, BufferedImage overlay) {
+		try {
+			loadImage(new URL(path));
+			
+			// apply overlay to pieces
+		} catch(MalformedURLException e) {
+			e.printStackTrace();
+		}
+	}
+	
 	/**
 	 * Returns the URL of the currently loaded file
 	 * @return
@@ -133,7 +143,7 @@ public class Animation implements Runnable {
 	}
 	
 	/**
-	 * Loads Image at given URL
+	 * Loads Image from given URL
 	 * @param url
 	 * @return
 	 * @throws IOException

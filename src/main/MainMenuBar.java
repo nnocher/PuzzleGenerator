@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JSeparator;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-import puzzle.PuzzlePiece;
+import puzzle.pieces.PuzzlePiece;
 
 /**
  * Controller for JMenuBar

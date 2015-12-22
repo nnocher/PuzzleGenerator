@@ -13,6 +13,7 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
 import main.Main;
+import puzzle.pieces.PuzzlePiece;
 
 /**
  * Controls the Puzzle
